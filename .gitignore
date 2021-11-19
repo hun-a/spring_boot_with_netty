@@ -215,6 +215,6 @@ gradle-app.setting
 .classpath
 
 # H2
-r2dbc*
+r2dbc:*
 
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,macos,linux,windows,intellij+all
