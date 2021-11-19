@@ -1,2 +1,17 @@
 server:
   port: 8080
+
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///test
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: debug

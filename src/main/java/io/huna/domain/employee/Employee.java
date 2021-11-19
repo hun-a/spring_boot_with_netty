@@ -4,22 +4,26 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Getter
+@Table
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Employee {
 
-    private String id;
+    @Id
+    private Long id;
 
     private String name;
 
     @Builder
-    public Employee(String id, String name) {
+    public Employee(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Employee update(String id, String name) {
+    public Employee update(Long id, String name) {
         this.id = id;
         this.name = name;
         return this;

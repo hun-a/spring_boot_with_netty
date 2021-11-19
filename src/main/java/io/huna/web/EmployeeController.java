@@ -23,8 +23,14 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    private Mono<EmployeeResponseDto> getEmployeeById(@PathVariable String id) {
+    private Mono<EmployeeResponseDto> getEmployeeById(@PathVariable Long id) {
         return employeeService.findEmployeeById(id)
+                .map(EmployeeResponseDto::new);
+    }
+
+    @GetMapping("/name/{name}")
+    private Flux<EmployeeResponseDto> getAllEmployeesByName(@PathVariable String name) {
+        return employeeService.findAllEmployeesByName(name)
                 .map(EmployeeResponseDto::new);
     }
 
@@ -41,7 +47,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/save")
-    private Mono<String> saveEmployee(@RequestBody EmployeeRequestDto body) {
+    private Mono<Long> saveEmployee(@RequestBody EmployeeRequestDto body) {
         return employeeService.saveEmployee(body.toEntity());
     }
 }

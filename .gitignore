@@ -214,4 +214,7 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+# H2
+r2dbc*
+
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,macos,linux,windows,intellij+all

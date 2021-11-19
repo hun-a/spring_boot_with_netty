@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class EmployeeRequestDto {
 
-    private String id;
+    private Long id;
 
     private String name;
 
     @Builder
-    public EmployeeRequestDto(String id, String name) {
+    public EmployeeRequestDto(Long id, String name) {
         this.id = id;
         this.name = name;
     }

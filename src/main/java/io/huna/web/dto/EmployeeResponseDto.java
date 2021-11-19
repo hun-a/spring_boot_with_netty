@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class EmployeeResponseDto {
 
-    private String id;
+    private Long id;
 
     private String name;
 
